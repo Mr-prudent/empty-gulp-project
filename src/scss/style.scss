@@ -1,0 +1,208 @@
+@import "./normalise.scss";
+
+$vm_base: 750;
+
+@function vm($px) {
+  @return ($px / $vm_base) * 100vw;
+}
+
+main {
+  .tabs {
+    width: vm(750);
+    height: vm(310);
+    background: #3c3d3f;
+    .tabs-wrap {
+      padding: 0 vm(24);
+    }
+    .title {
+      position: relative;
+      color: #fff;
+      height: vm(115);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: vm(36);
+    }
+    .tabs-list {
+      overflow: hidden;
+      height: vm(195);
+      .swiper-wrapper .swiper-slide {
+        position: relative;
+        border-radius: 15px 15px 0px 0px;
+        transition: all 0.1s ease;
+        display: flex;
+        height: vm(157);
+        margin-top: vm(39);
+        background-size: 100% 100%;
+        visibility: hidden;
+        p {
+          padding: vm(28) 25px;
+          font-size: vm(34);
+          font-weight: 600;
+        }
+      }
+      .swiper-wrapper .swiper-slide-active {
+        visibility: visible;
+        margin-top: 0;
+        position: static;
+        height: 100%;
+        padding: 0;
+        z-index: 9;
+      }
+      .swiper-wrapper .swiper-slide-next,
+      .swiper-wrapper .swiper-slide-prev {
+        z-index: 8;
+        visibility: visible;
+      }
+      .free {
+        background: url(/img/free.png) no-repeat;
+        p {
+          color: #5d5d5d;
+        }
+      }
+      .quarter {
+        background: url(/img/quarter.png) no-repeat;
+        p {
+          color: #32435d;
+        }
+      }
+      .month {
+        background: url(/img/month.png) no-repeat;
+        p {
+          color: #422200;
+        }
+      }
+      .year {
+        background: url(/img/year.png) no-repeat;
+        p {
+          color: #440b00;
+        }
+      }
+      .year-s {
+        background: url(/img/year-s.png) no-repeat;
+        p {
+          color: #e9ac3e;
+        }
+      }
+    }
+  }
+  .info {
+    padding: 0 vm(24) vm(30);
+    width: vm(750);
+    background-color: #fff;
+    .info-top {
+      height: vm(143);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      p {
+        color: #000;
+        font-size: 16px;
+      }
+      .btn {
+        padding: vm(18);
+        background: #e4b766;
+        color: #fff;
+        border-radius: 10px;
+      }
+    }
+    .info-table {
+      border: 2px solid #eeeeee;
+      background-color: #fff;
+      border-radius: 10px;
+      & > div {
+        padding: 0 vm(42);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span {
+          display: block;
+        }
+      }
+      .th {
+        height: vm(100);
+        background: #f9efe3;
+        span {
+          color: #401e00;
+          font-weight: 600;
+          font-size: vm(34);
+          &:nth-child(1) {
+            position: relative;
+            width: vm(210);
+            height: vm(60);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 0;
+            &::after {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              z-index: -1;
+              background-image: -webkit-radial-gradient(
+                #eed5b0 1px,
+                rgba(0, 0, 0, 0) 1px
+              );
+              background-image: radial-gradient(
+                #eed5b0 1px,
+                rgba(0, 0, 0, 0) 1px
+              );
+              background-size: 8px 8px;
+              content: "";
+            }
+          }
+        }
+      }
+      .tr {
+        height: vm(88);
+        span:nth-child(1) {
+          color: #838795;
+        }
+        span:nth-child(2) {
+          color: #1d1d1d;
+        }
+      }
+      .tr:nth-child(odd) {
+        background-color: #f8f8f8;
+      }
+      .tr,
+      .th {
+        img {
+          position: relative;
+          left: -5px;
+          top: 3px;
+          width: vm(30);
+          height: vm(30);
+        }
+      }
+    }
+    & > .btn {
+      margin-top: vm(55);
+      font-size: 16px;
+      display: block;
+      width: 100%;
+      height: vm(100);
+      background: url(/img/btn.png) no-repeat;
+      background-size: vm(700) vm(100);
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: #401e00;
+      em {
+        font-style: normal;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+html,
+body {
+  overflow: hidden;
+  overflow-y: auto;
+}

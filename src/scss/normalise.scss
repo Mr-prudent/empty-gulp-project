@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+li,
+ol,
+ul {
+  list-style: none;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  color: #000;
+}
+a:link,
+a:visited {
+  text-decoration: none;
+}
+body {
+  font-family: "SourceHanSansCN", sans-serif;
+  font-size: 14px;
+}
+img {
+  border: none;
+  max-width: 100%;
+}
+
+div {
+  box-sizing: border-box;
+}
+i {
+  font-style: normal;
+}
